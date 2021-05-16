@@ -1,0 +1,47 @@
+     *{
+        box-sizing: border-box;
+      }
+      body{
+        margin-left: 15rem;
+        margin-right: 15rem;
+      }
+      h1{
+        background-color: slategrey;
+        color: white;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      #parent{
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+      }
+      .header{
+        background-color: gray;
+        color: white;
+      }
+      .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        border: 1px solid black;
+      }
+      .row > div {
+        margin: .5rem;
+        text-align: center;
+        font-size: 1rem;
+      }
+      .artist{
+        flex: 2;
+      }
+      .title{
+        flex: 3;
+      }
+      .released{
+        flex: 1;
+      }
+      .rank{
+        flex: 1;
+      }
