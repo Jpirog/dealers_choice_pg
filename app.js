@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const db = require('./public/db/dbinit.js') // initialize the database
+const db = require('./public/db/dbinit.js') // initialize the database on load
 const app = express();
 
 app.use(morgan("dev"));
