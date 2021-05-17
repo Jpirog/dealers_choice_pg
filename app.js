@@ -13,6 +13,10 @@ app.get("/", (req, res) => {
   res.redirect("/main");
 })
 
+app.get("*", (req, res) => { // rather than a 404, just send them to the main page
+  res.redirect("/main");
+})
+
 const PORT = 1338;
 
 app.listen(PORT, () => {
