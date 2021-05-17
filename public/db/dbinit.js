@@ -1,5 +1,5 @@
 const initSQL = `
-drop database if exists runningsongs;
+-- drop database if exists runningsongs;
 drop table if exists song;
 drop table if exists band;
 create table band (id serial primary key, name varchar(254) unique not null, details text not null);
