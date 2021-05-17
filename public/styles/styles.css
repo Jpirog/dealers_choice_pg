@@ -2,8 +2,9 @@
         box-sizing: border-box;
       }
       body{
-        margin-left: 15rem;
-        margin-right: 15rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        min-width: 600px;
       }
       h1{
         background-color: slategrey;
@@ -46,4 +47,18 @@
       }
       .rank{
         flex: 1;
+      }
+      @media all and (max-width: 750px) {
+        body {
+            margin-left: 2.5rem;
+            margin-right: 2.5rem;
+            background-color: lightgreen;
+          } 
+      }
+      @media all and (max-width: 600px) {
+        body {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: yellow;
+          } 
       }

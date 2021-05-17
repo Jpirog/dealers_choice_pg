@@ -9,5 +9,5 @@ const client = new pg.Client({
 });
 
 client.connect();
-console.log("CONNECTED", client)
+
 module.exports = client;

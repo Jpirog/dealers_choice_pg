@@ -3,7 +3,7 @@ const initSQL = `
 drop table if exists song;
 drop table if exists band;
 create table band (id serial primary key, name varchar(254) unique not null, details text not null);
-create table song (id serial primary key, name varchar(254) not null, released integer not null, rank integer, band int not null, details text not null, foreign key(band) references band(id));
+create table song (id serial primary key, name varchar(254) not null, released integer not null, rank integer, band int not null, video varchar(254), details text not null, foreign key(band) references band(id));
 
 insert into band (name, details) values ('The Script', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam risus est, facilisis ac est id, elementum condimentum nulla. Sed et gravida dolor. Fusce tempor egestas velit quis facilisis. Nunc a varius quam. Vivamus aliquam, ligula quis venenatis pharetra, libero sapien posuere felis, quis rutrum enim est non nisl. Vestibulum semper congue felis, sed accumsan neque malesuada non. Morbi non ultrices leo. Curabitur interdum dolor id quam auctor imperdiet. Mauris augue mi, viverra nec maximus porttitor, euismod in augue. Phasellus bibendum auctor maximus. Aliquam erat volutpat. Phasellus sodales orci non pharetra vestibulum. Donec euismod neque vel elementum ultrices. Nunc luctus mi nec mauris volutpat, non dignissim diam auctor. Aliquam vitae fringilla metus.
 
@@ -214,4 +214,3 @@ const pg = require('pg');
 const client = require('./dbconnect.js') 
 
 const data =  client.query(initSQL);
-
