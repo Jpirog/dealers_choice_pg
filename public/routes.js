@@ -19,13 +19,15 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    if (isNaN(req.params.id) || req.params.id % 1 !== 0) {
+    if (isNaN(req.params.id) || typeof (req.params.id*1) !== 'number' || req.params.id % 1 !== 0) {
       res.send(invalidSong(req.headers.host))
+      return;
     }
     const data = await client.query(baseQuery + " where s.id = $1", [req.params.id]);
     const song = data.rows[0];
     if (typeof song === 'undefined') {
       res.send(invalidSong(req.headers.host))
+      return;
     }
     res.send(songDetails(song, req.headers.host));
   } catch (error) { next(error) }
